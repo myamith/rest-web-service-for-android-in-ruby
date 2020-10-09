@@ -2,8 +2,7 @@ require 'dbi'
 require 'oci8'
 
 begin
-#dbh = DBI.connect('DBI:OCI8:ORCL', 'hr', 'hr')
-dbh = DBI.connect('DBI:OCI8:MIGIDEV','SCMTOOLS', 'scm#wft00l')
+dbh = DBI.connect('DBI:OCI8:MIGIDEV','user', 'password')
 dbh.do( "INSERT INTO user_table(FROM_PLACE,TO_PLACE,START_TIME,CURRENT_TIME) VALUES ('app', 'amith', '11:30','12')" )
      puts "Record has been inserted"
      dbh.commit
