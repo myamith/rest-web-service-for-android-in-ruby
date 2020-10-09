@@ -32,7 +32,7 @@ put '/app', :provides => :json do
         start_time=data['START_TIME']
         current_time=data['CURRENT_TIME']
         begin
-        dbh = DBI.connect('DBI:OCI8:MIGIDEV','SCMTOOLS', 'scm#wft00l')
+        dbh = DBI.connect('DBI:OCI8:MIGIDEV','user', 'password')
 
         sth = dbh.prepare( "INSERT INTO user_table(FROM_PLACE,TO_PLACE,START_TIME,CURRENT_TIME) VALUES (?,?,?,?)" )
         sth.execute(from_place,to_place,start_time,current_time)
